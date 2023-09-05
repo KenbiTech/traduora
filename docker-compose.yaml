@@ -11,7 +11,7 @@ services:
       args:
           NODE_ENV: ${NODE_ENV:-production}
     ports:
-     - "8000:8000"
+     - "8000:8080"
     environment:
       NODE_ENV: ${NODE_ENV:-production}
       TR_SIGNUPS_ENABLED: <TR_SIGNUPS_ENABLED>
@@ -28,6 +28,5 @@ services:
       TR_DB_USER: '<DB_USER>'
       TR_DB_PASSWORD: '<DB_PASSWORD>'
       TR_DB_DATABASE: '<DB_NAME>' 
-      TR_VIRTUAL_HOST: http://localhost:8000
     entrypoint: './docker-entrypoint.compose.sh'
     restart: on-failure
