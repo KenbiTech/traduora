@@ -28,6 +28,6 @@ services:
       TR_DB_USER: '<DB_USER>'
       TR_DB_PASSWORD: '<DB_PASSWORD>'
       TR_DB_DATABASE: '<DB_NAME>' 
-      TR_VIRTUAL_HOST: <FULL_DOMAIN>
+      TR_VIRTUAL_HOST: '<FULL_DOMAIN>'
     entrypoint: './docker-entrypoint.compose.sh'
     restart: on-failure
