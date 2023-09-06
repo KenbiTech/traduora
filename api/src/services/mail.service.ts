@@ -51,10 +51,10 @@ export default class MailService {
     await this.send({
       from: this.from,
       to: user.email,
-      subject: 'Welcome to Traduora - enjoy the beta',
+      subject: 'Welcome to Traduora',
       text: this.knownTemplates.welcome({
         user: user,
-        virtualHost: config.virtualHost,
+        virtualHost: <full_domain>,
       }),
     });
   }
@@ -71,7 +71,7 @@ export default class MailService {
   }
 
   async passwordResetToken(user: User, token: string): Promise<any> {
-    const endpoint = join(config.virtualHost, 'reset-password');
+    const endpoint = join(<full_domain>, 'reset-password');
     await this.send({
       to: user.email,
       from: this.from,
@@ -91,7 +91,7 @@ export default class MailService {
       subject: 'You have been granted access to a project on Traduora',
       text: this.knownTemplates.invitedToProject({
         user: user,
-        virtualHost: config.virtualHost,
+        virtualHost: <full_domain>,
       }),
     });
   }
@@ -103,7 +103,7 @@ export default class MailService {
       subject: 'You have been invited to a project on Traduora',
       text: this.knownTemplates.invitedToPlatform({
         invite: invite,
-        virtualHost: config.virtualHost,
+        virtualHost: <full_domain>,
       }),
     });
   }
