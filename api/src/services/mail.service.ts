@@ -71,7 +71,7 @@ export default class MailService {
   }
 
   async passwordResetToken(user: User, token: string): Promise<any> {
-    const endpoint = join('<full_domain>', 'reset-password');
+    const endpoint = join(<full_domain>, 'reset-password');
     await this.send({
       to: user.email,
       from: this.from,
